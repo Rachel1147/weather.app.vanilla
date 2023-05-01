@@ -33,21 +33,31 @@ currentMinute.innerHTML = `${minute}`;
 //
 //
 
-function showTemp(response) {
-  let temp = document.querySelector("#temperature");
-  let currentTemp = Math.round(response.data.main.temp);
-  temp.innerHTML = `${currentTemp}`;
+//function showCurrent(response) {
+//let temp = document.querySelector("#temperature");
+//let currentTemp = Math.round(response.data.main.temp);
+//temp.innerHTML = `${currentTemp}`;
+//let descriptionElement = document.querySelector("#description");
+//let currentDescription = (response.data.main);
+//}
+
+//function search(event) {
+///  event.preventDefault();
+// let h1 = document.querySelector("#city");
+// let cityInput = document.querySelector("#city-input");
+//  let apiKey = "88724523008dc9e1be18f6eb6a959b67";
+// let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&units=metric&appid=${apiKey}`;
+// axios.get(apiUrl).then(showCurrent);
+/// console.log(apiUrl);
+//}
+
+//let searchForm = document.querySelector("#search-form");
+//searchForm.addEventListener("submit", search);
+//
+function showCurrent(response) {
+  console.log(response.data);
 }
 
-function search(event) {
-  event.preventDefault();
-  let h1 = document.querySelector("#city");
-  let cityInput = document.querySelector("#city-input");
-  h1.innerHTML = cityInput.value;
-  let apiKey = "88724523008dc9e1be18f6eb6a959b67";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&units=metric&appid=${apiKey}`;
-  axios.get(apiUrl).then(showTemp);
-}
-
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", search);
+let apiKey = "88724523008dc9e1be18f6eb6a959b67";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=chicago&units=metric&appid=${apiKey}`;
+axios.get(apiUrl).then(showCurrent);

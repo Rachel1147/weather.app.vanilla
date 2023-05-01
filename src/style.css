@@ -1,9 +1,9 @@
 body {
-  background-color: #d9d9d9;
+  background-color: white;
 }
 
 .weather-app {
-  background-color: #ffffff;
+  background-color: #eae5e4;
   border: 2px solid #ffffff;
   padding: 15px;
   margin: 20px auto;
@@ -16,7 +16,9 @@ li {
 }
 
 .current {
+  text-align: left;
   padding: 0;
+  color: #797676;
 }
 
 .temperature {
@@ -26,14 +28,41 @@ li {
   line-height: 1;
 }
 
+#largeDisplay {
+  margin-bottom: 15px;
+}
+
 h1 {
-  margin: 0px;
+  text-align: left;
+  margin-top: 15px;
 }
 
 #bttn {
-  background-color: #d9d9d9;
+  background-color: #797676;
 }
 
 .low {
-  color: #4169e1;
+  color: #797676;
+}
+
+.form-control {
+  background: white;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  height: 50px;
+  line-height: 20px;
+  padding: 15px;
+}
+
+.deets {
+  padding: 0;
+  color: #797676;
+}
+
+.data {
+  color: black;
 }
