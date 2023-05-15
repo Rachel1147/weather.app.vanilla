@@ -32,32 +32,26 @@ currentMinute.innerHTML = `${minute}`;
 //
 //
 //
-
-//function showCurrent(response) {
-//let temp = document.querySelector("#temperature");
-//let currentTemp = Math.round(response.data.main.temp);
-//temp.innerHTML = `${currentTemp}`;
-//let descriptionElement = document.querySelector("#description");
-//let currentDescription = (response.data.main);
-//}
-
-//function search(event) {
-///  event.preventDefault();
-// let h1 = document.querySelector("#city");
-// let cityInput = document.querySelector("#city-input");
-//  let apiKey = "88724523008dc9e1be18f6eb6a959b67";
-// let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&units=metric&appid=${apiKey}`;
-// axios.get(apiUrl).then(showCurrent);
-/// console.log(apiUrl);
-//}
-
-//let searchForm = document.querySelector("#search-form");
-//searchForm.addEventListener("submit", search);
-//
-function showCurrent(response) {
+function displayData(response) {
   console.log(response.data);
+
+  let tempElement = document.querySelector("#temperature");
+  tempElement.innerHTML = Math.round(response.data.main.temp);
+
+  let cityElement = document.querySelector("#city");
+  cityElement.innerHTML = response.data.name;
+
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement = response.data.weather[0].description;
+
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = response.data.main.humidity;
+
+  let windElement = document.querySelector("#wind-speed");
+  windElement.innerHTML = Math.round(response.data.wind.speed);
 }
 
 let apiKey = "88724523008dc9e1be18f6eb6a959b67";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=chicago&units=metric&appid=${apiKey}`;
-axios.get(apiUrl).then(showCurrent);
+console.log(apiUrl);
+axios.get(apiUrl).then(displayData);

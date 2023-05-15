@@ -13,6 +13,7 @@ body {
 
 li {
   list-style-type: none;
+  text-transform: capitalize;
 }
 
 .current {
