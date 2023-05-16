@@ -13,7 +13,9 @@ body {
 
 li {
   list-style-type: none;
-  text-transform: capitalize;
+}
+li:first-letter {
+  text-transform: uppercase;
 }
 
 .current {
