@@ -28,6 +28,7 @@ function displayData(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind-speed");
   let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
 
   tempElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
@@ -35,8 +36,14 @@ function displayData(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey = "88724523008dc9e1be18f6eb6a959b67";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=chicago&units=metric&appid=${apiKey}`;
+let city = "Chicago";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 axios.get(apiUrl).then(displayData);
