@@ -22,8 +22,6 @@ function formatDate(timestamp) {
 }
 
 function displayData(response) {
-  console.log(response.data);
-
   let tempElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
@@ -41,5 +39,4 @@ function displayData(response) {
 
 let apiKey = "88724523008dc9e1be18f6eb6a959b67";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=chicago&units=metric&appid=${apiKey}`;
-console.log(apiUrl);
 axios.get(apiUrl).then(displayData);
