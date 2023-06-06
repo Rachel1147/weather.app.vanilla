@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="src/style.css" />
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
   </head>
+
   <body>
     <div class="container">
       <div class="weather-app">
-
         <form class="search-form" id="search-form">
           <div class="row">
             <div class="col-6">
@@ -40,46 +40,48 @@
             </div>
             <div class="col-4">
               <input
-              type="submit"
-              value="Current Location"
-              class="form-control btn shadow-sm"
-              id="bttn"
-            />
+                type="submit"
+                value="Current Location"
+                class="form-control btn shadow-sm"
+                id="bttn"
+              />
             </div>
           </div>
         </form>
 
-
-        <h1 id="city">
-          Chicago, IL
-        </h1>
+        <h1 id="city">Chicago, IL</h1>
         <ul class="current">
-          <li> Last updated:
-           <span id="date"> Sunday 14:00</span>
+          <li>
+            Last updated:
+            <span id="date"> Sunday 14:00</span>
           </li>
           <li id="description">Partly Cloudy</li>
         </ul>
-            <div class="row">
-                <div class="col-6" id="largeDisplay">
-                  <img
-                  id="icon"
-                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-                  class="float-left"
-                  >
-                    <span class="temperature" id="temperature">19</span
-                      > °C | <a href="#"> °F </a>
-                </div>
-
-                <div class="col-6">
-                        <ul>
-                          <span class="deets">
-                            <li>Humidity <span class="data"> <span id="humidity">77</span>%</span></li>
-                            <li>Wind <span class="data"> <span id="wind-speed">8</span>km/h</span></li>
-                          </span>
-                        </ul>
-                </div>
-            </div>
-
+        <div class="row">
+          <div class="col-6" id="largeDisplay">
+            <img
+              id="icon"
+              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+              class="float-left"
+            />
+            <span class="temperature" id="temperature">19</span> °C |
+            <a href="#" id="fahrenheit-link"> °F </a>
+          </div>
+          <div class="col-6">
+            <ul>
+              <span class="deets">
+                <li>
+                  Humidity
+                  <span class="data"> <span id="humidity">77</span>%</span>
+                </li>
+                <li>
+                  Wind
+                  <span class="data"> <span id="wind-speed">8</span>km/h</span>
+                </li>
+              </span>
+            </ul>
+          </div>
+        </div>
 
         <!-- <div class="container text-center">
           <div class="row">
@@ -137,7 +139,6 @@
         </div> -->
       </div>
     </div>
-    </div>
-      <script src="src/index.js"></script>
+    <script src="src/index.js"></script>
   </body>
 </html>
