@@ -30,7 +30,9 @@ function displayData(response) {
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
 
-  tempElement.innerHTML = Math.round(response.data.main.temp);
+  celsiusTemp = response.data.main.temp;
+
+  tempElement.innerHTML = Math.round(celsiusTemp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
@@ -56,10 +58,14 @@ function handleSubmit(event) {
 }
 function displayFahrenheitTemp(event) {
   event.preventDefault();
-  alert("Link Clicked");
+  let tempElement = document.querySelector("#temperature");
+  let fTemp = (tempElement.innerHTML * 9) / 5 + 32;
+  tempElement.innerHTML = Math.round(fTemp);
 }
 
 search("New York");
+
+let celsiusTemp = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
