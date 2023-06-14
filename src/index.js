@@ -59,6 +59,9 @@ function handleSubmit(event) {
 function displayFahrenheitTemp(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  // add active class from c link
   let fTemp = (celsiusTemp * 9) / 5 + 32;
   tempElement.innerHTML = Math.round(fTemp);
 }
@@ -66,6 +69,8 @@ function displayFahrenheitTemp(event) {
 function displayCelciusTemp(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#temperature");
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
   tempElement.innerHTML = Math.round(celsiusTemp);
 }
 
